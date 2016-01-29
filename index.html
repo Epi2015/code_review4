@@ -26,9 +26,9 @@
           <h4>Place an order</h4>
           <ul>
             <li>Small Pizza's start at $10</li>
-            <li>Toppings $2/ Extra Cheese $3</li>
-            <li>Delivery under 5 miles-$5</li>
-            <li>Additional distance-$2 per mile</li>
+            <li>All toppings $3-$4</li>
+            <li>Under 5 mile Delivery-$5</li>
+            <li>Additional $5 up to 10 miles</li>
           </ul>
 
         </div>
@@ -41,29 +41,14 @@
 
           <form id="pizza-information">
             <div class="form-group">
-              <label for="size"> Pizza Size</label>
+              <label for="size">Pizza Size</label>
               <select class="form-control" id="size">
-
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
-                <!-- <option>The Patriot</option> -->
               </select>
             </div>
 
-            <div class="form-group">
-              <label for="toppings"> Pizza Toppings</label>
-              <select class="form-control" id="toppings">
-
-                <option></option>
-                <option>anchovy</option>
-                <option>mushroom</option>
-                <option>sausage</option>
-                <option>peppers</option>
-                <option>Extra Cheese</option>
-                <!-- <option>The Patriot</option> -->
-              </select>
-            </div>
 
           <!--   <div class="form-group">
               <label for="Mile">Senior Discount?</label>
@@ -81,10 +66,44 @@
               </select>
             </div>
 
+
             <div class="form-group">
+              <label for="test">Additional Mileage over 5 and under 10</label>
+              <select class="form-control" id="test">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="toppings">Meat toppings</label>
+              <select class="form-control" id="toppings">
+                <option> </option>
+                <option>Bacon</option>
+                <option>Ham</option>
+                <option>Sausage</option>
+                <option>Pepperoni</option>
+                <option>Meatball(+$1)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="toppings2">Veggie toppings</label>
+              <select class="form-control" id="toppings2">
+                <option> </option>
+                <option>Tomatoe</option>
+                <option>mushroom</option>
+                <option>Spinach</option>
+                <option>Garlic</option>
+                <option>Anchovies(+$1)</option>
+              </select>
+            </div>
+
+
+            <!-- <div class="form-group">
               <label for="Mile">Additional distance</label>
               <input type="number" class="form-control" placeholder="Enter Milage" id="Mile">
-            </div>
+            </div> -->
 
             <button type="submit" class="btn btn-primary">Calculate Price</button>
           </form>
@@ -98,7 +117,7 @@
         <div class="col-md-4 col-md-offset-4">
           <div class="panel panel-default result-panel">
             <div class="panel-heading">
-              <h3 class="panel-title">Price</h3>
+              <h3 class="panel-title">Total cost</h3>
             </div>
             <div class="panel-body" id="finalPrice">
               <span id="finalPrice"></span>
