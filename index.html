@@ -6,7 +6,7 @@
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Movies</title>
+    <title>Pizza</title>
   </head>
   <body>
 
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="jumbotron">
-            <h2>Ticket Price Calculator</h2>
+            <h2>Online Pizza ordering</h2>
           </div>
         </div>
       </div>
@@ -23,36 +23,50 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <h4>Rules</h4>
+          <h4>Place an order</h4>
           <ul>
-            <li>All tickets begin with 8 dollar base cost</li>
-            <li>Main showings += 2 dollars</li>
-            <li>Seniors -= 2 dollars</li>
-            <li>First Release += 2 dollars</li>
+            <li>Small Pizza's start at $10</li>
+            <li>Toppings $2/ Extra Cheese $3</li>
+            <li>Delivery under 5 miles-$5</li>
+            <li>Additional distance-$2 per mile</li>
           </ul>
-          
+
         </div>
       </div>
     </div>
-   
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
 
-          <form id="ticket-information">
+          <form id="pizza-information">
             <div class="form-group">
-              <label for="film">Film</label>
-              <select class="form-control" id="film">
-                <option>Fifty Shades of Gray</option>
-                <option>Star Wars: Episode VII</option>
-                <option>The Revenant</option>
-                <option>The Hateful Eight</option>
-                <option>The Patriot</option>
+              <label for="size"> Pizza Size</label>
+              <select class="form-control" id="size">
+
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <!-- <option>The Patriot</option> -->
               </select>
             </div>
-            
+
+            <div class="form-group">
+              <label for="toppings"> Pizza Toppings</label>
+              <select class="form-control" id="toppings">
+
+                <option></option>
+                <option>anchovy</option>
+                <option>mushroom</option>
+                <option>sausage</option>
+                <option>peppers</option>
+                <option>Extra Cheese</option>
+                <!-- <option>The Patriot</option> -->
+              </select>
+            </div>
+
           <!--   <div class="form-group">
-              <label for="age">Senior Discount?</label>
+              <label for="Mile">Senior Discount?</label>
               <select class="form-control" id="seniorDiscount">
                 <option>Yes</option>
                 <option>No</option>
@@ -60,18 +74,18 @@
             </div> -->
 
             <div class="form-group">
-              <label for="age">Age</label>
-              <input type="number" class="form-control" placeholder="Enter your age" id="age">
+              <label for="delivery">Delivery Service</label>
+              <select class="form-control" id="delivery">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="showing">Showing?</label>
-              <select class="form-control" id="showing">
-                <option>Matinee</option>
-                <option>Main</option>
-              </select>
+              <label for="Mile">Additional distance</label>
+              <input type="number" class="form-control" placeholder="Enter Milage" id="Mile">
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Calculate Price</button>
           </form>
 
@@ -89,10 +103,10 @@
             <div class="panel-body" id="finalPrice">
               <span id="finalPrice"></span>
             </div>
-          </div>   
+          </div>
         </div><!-- col-md-4 col-md-offset-4 -->
       </div><!-- row -->
-    </div><!-- container-fluid --> 
+    </div><!-- container-fluid -->
 
   </body>
 </html>

@@ -1,44 +1,54 @@
 // Business Logic
 
-function Ticket(filmName, showing, SeniorDiscount) {
-	this.filmName = filmName;
-	this.showing = showing;
-	this.SeniorDiscount = SeniorDiscount;
+function Pizza(pizzaSize, delivery, addMile, toppings) {
+	this.pizzaSize = pizzaSize;
+	this.delivery = delivery;
+	this.addMile = addMile;
+	this.toppings = toppings;
 }
 
-Ticket.prototype.price = function() {
-	
-	//all tickets begin with a base price of 6
-	var ticketPrice = 8;
+Pizza.prototype.price = function() {
 
-	//if a ticket is for a new release movie add 2 to its cost.
-	// if it's for an old movie, do not add to its cost.
+	//all pizzas begin with a base price of 8
+	var pizzaPrice = 10;
+
+	//Pizza toppings add 2 for each to its cost.
 	if (
-		this.filmName === "Fifty Shades of Gray" ||
-		this.filmName === "Star Wars: Episode VII" ||
-		this.filmName === "The Revenant" ||
-		this.filmName === "The Hateful Eight"
+		this.pizzaSize === "Large" ||
+		this.pizzaSize === "Medium"
 		) {
-		ticketPrice += 2;
-	} else if (this.filmName === "The Patriot") {
-		ticketPrice += 0;
+		pizzaPrice += 4;
+	} else if (this.pizzaSize === "Small") {
+		pizzaPrice += 0;
 	}
 
-	//if a ticket is for a main showing add 2 to its cost.
-	//if a ticket is for a matinee showing do not add to its cost.
-	if (this.showing === "Main" ) {
-		ticketPrice += 2;
-	} else if (this.showing ==="Matinee") {
-		ticketPrice += 0;
+
+	if (
+
+		this.pizzatoppings === "anchovy" ||
+		this.pizzatoppings === "peppers" ||
+		this.pizzatoppings === "mushroom"||
+		this.pizzatoppings === "sausage"
+		) {
+		pizzaPrice += 2;
+	} else if (this.pizzatoppings === "Extra Cheese") {
+		pizzaPrice += 4;
 	}
 
-	if (this.SeniorDiscount === true) {
-		ticketPrice -=2;
-	} else if (this.SeniorDiscount === false) {
-		ticketPrice += 0;
+	//if  pizza is for a local delivery add 5 to its cost.
+
+	if (this.delivery === "Yes" ) {
+		pizzaPrice += 5;
+	} else if (this.delivery ==="No") {
+		pizzaPrice += 0;
 	}
 
-	return ticketPrice;
+	if (this.addMile === true) {
+		pizzaPrice -=2;
+	} else if (this.addMile === false) {
+		pizzaPrice += 0;
+	}
+  return pizzaPrice;
 };
 
 
@@ -47,28 +57,28 @@ Ticket.prototype.price = function() {
 
 $(document).ready(function() {
 
-	$("form#ticket-information").submit(function(event) {
+	$("form#pizza-information").submit(function(event) {
 
 		event.preventDefault();
 
-		var submittedFilm = $("select#film").val();
-		var stringAge = $("input#age").val();
-		var integerAge = parseInt(stringAge);
-		var SeniorDiscount;
+		var submittedSize = $("select#size").val();
+		var stringMile = $("input#Mile").val();
+		var integerMile = parseInt(stringMile);
+		var addMile;
 
 
-		if (integerAge >= 60) {
-			SeniorDiscount = true;
-		} else if (integerAge < 60) {
-			SeniorDiscount = false;
+		if (integerMile >= 10) {
+			addMile = true;
+		} else if (integerMile < 10) {
+			addMile = false;
 		}
 
-		var submittedShowing = $("select#showing").val();
+		var submittedDelivery = $("select#delivery").val();
 
-		newTicket = new Ticket(submittedFilm, submittedShowing, SeniorDiscount);
-		newTicketPrice = newTicket.price();
+		newPizza = new Pizza(submittedSize, submittedDelivery, addMile, toppings);
+		newPizzaPrice = newPizza.price();
 
-		$("span#finalPrice").append(newTicketPrice);
+		$("span#finalPrice").append(newPizzaPrice);
 
 	});
 });
