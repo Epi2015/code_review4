@@ -1,13 +1,22 @@
-.jumbotron h2 {
+.jumbotron h1 {
 	text-align: center;
 }
 
 .jumbotron {
-	margin-top: 25px;
-	padding-top: 3px;
+	margin-top: 150px;
+	padding-top: 30px;
 	padding-bottom: 10px;
 }
 
 .panel{
 	margin-top:30px;
 }
+
+/*body {
+  background:url('http://dummyimage.com/1080/9494ff/0011ff.png') #A98436 no-repeat 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+}
+ */
