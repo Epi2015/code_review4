@@ -92,6 +92,7 @@ $(document).ready(function() {
 		newPizzaPrice = newPizza.price();
 
 		$("span#finalPrice").append(newPizzaPrice);
+		
 
 	});
 });
